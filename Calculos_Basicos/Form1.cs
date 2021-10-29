@@ -17,55 +17,52 @@ namespace Calculos_Basicos
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnSomar_Click(object sender, EventArgs e)
+        private void btnOperacaoMatematica_Click(object sender, EventArgs e)
         {
-            // Declaração de variáveis do tipo double, num1, num2, resultado.
-            double num1, num2, resultado;
-            //num1 e num2 recebe conteúdo do textbox (txtNum1.text e txtNum2.text)
-            //Convert.Todouble é necessário para que seja convertido o conteúdo do textbox para número.
-            num1 = Convert.ToDouble(txtNum1.Text);
-            num2 = Convert.ToDouble(txtNum1.Text);
-            //Variável resultado = recebe conteúdo de num1 + num2 e realiza o cálculo.
-            resultado = num1 + num2;
-            // txtResultado.Text = recebe conteúdo da variável resultado e converte para número.
+            double num1, num2, resultado = default(double);
+
+            if(!double.TryParse(txtNum1.Text, out num1))
+                MessageBox.Show("Erro!");
+
+            if(!double.TryParse(txtNum2.Text, out num2))
+                MessageBox.Show("Erro!");
+
+            switch ((sender as Button).Text)
+            {
+                case "+":
+                    resultado = num1 + num2;
+                    break;
+                case "-":
+                    resultado = num1 - num2;
+                    break;
+                case "*":
+                    resultado = num1 * num2;
+                    break;
+                case "/":
+                    resultado = num1 / num2;
+                    break;
+            }
+
             txtResultado.Text = resultado.ToString();
         }
 
-        private void btnSubtrair_Click(object sender, EventArgs e)
+        private void KeyPress_Allow_Only_Numbers(object sender, KeyPressEventArgs e)
         {
-            double num1, num2, resultado;
-            num1 = Convert.ToDouble(txtNum1.Text);
-            num2 = Convert.ToDouble(txtNum1.Text);
-            resultado = num1 - num2;
-            txtResultado.Text = resultado.ToString();
-        }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
 
-        private void btnMultiplicar_Click(object sender, EventArgs e)
-        {
-            double num1, num2, resultado;
-            num1 = Convert.ToDouble(txtNum1.Text);
-            num2 = Convert.ToDouble(txtNum1.Text);
-            resultado = num1 * num2;
-            txtResultado.Text = resultado.ToString();
-        }
-
-        private void btnDividir_Click(object sender, EventArgs e)
-        {
-            double num1, num2, resultado;
-            num1 = Convert.ToDouble(txtNum1.Text);
-            num2 = Convert.ToDouble(txtNum1.Text);
-            resultado = num1 / num2;
-            txtResultado.Text = resultado.ToString();
+            // Only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -73,6 +70,7 @@ namespace Calculos_Basicos
             txtNum1.Text = "";
             txtNum2.Text = "";
             txtResultado.Text = "";
+            txtNum1.Focus();
         }
     }
 }
