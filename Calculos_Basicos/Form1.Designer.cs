@@ -57,7 +57,6 @@ namespace Calculos_Basicos
             this.label1.Size = new System.Drawing.Size(239, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "CÁLCULOS BÁSICOS";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -112,7 +111,7 @@ namespace Calculos_Basicos
             this.btnSomar.TabIndex = 4;
             this.btnSomar.Text = "+";
             this.btnSomar.UseVisualStyleBackColor = false;
-            this.btnSomar.Click += new System.EventHandler(this.btnSomar_Click);
+            this.btnSomar.Click += new System.EventHandler(this.btnOperacaoMatematica_Click);
             // 
             // btnSubtrair
             // 
@@ -128,7 +127,7 @@ namespace Calculos_Basicos
             this.btnSubtrair.TabIndex = 5;
             this.btnSubtrair.Text = "-";
             this.btnSubtrair.UseVisualStyleBackColor = false;
-            this.btnSubtrair.Click += new System.EventHandler(this.btnSubtrair_Click);
+            this.btnSubtrair.Click += new System.EventHandler(this.btnOperacaoMatematica_Click);
             // 
             // btnMultiplicar
             // 
@@ -144,7 +143,7 @@ namespace Calculos_Basicos
             this.btnMultiplicar.TabIndex = 6;
             this.btnMultiplicar.Text = "*";
             this.btnMultiplicar.UseVisualStyleBackColor = false;
-            this.btnMultiplicar.Click += new System.EventHandler(this.btnMultiplicar_Click);
+            this.btnMultiplicar.Click += new System.EventHandler(this.btnOperacaoMatematica_Click);
             // 
             // btnDividir
             // 
@@ -160,7 +159,7 @@ namespace Calculos_Basicos
             this.btnDividir.TabIndex = 7;
             this.btnDividir.Text = "/";
             this.btnDividir.UseVisualStyleBackColor = false;
-            this.btnDividir.Click += new System.EventHandler(this.btnDividir_Click);
+            this.btnDividir.Click += new System.EventHandler(this.btnOperacaoMatematica_Click);
             // 
             // txtResultado
             // 
@@ -181,6 +180,7 @@ namespace Calculos_Basicos
             this.txtNum2.Name = "txtNum2";
             this.txtNum2.Size = new System.Drawing.Size(211, 26);
             this.txtNum2.TabIndex = 9;
+            this.txtNum2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Allow_Only_Numbers);
             // 
             // txtNum1
             // 
@@ -191,6 +191,7 @@ namespace Calculos_Basicos
             this.txtNum1.Name = "txtNum1";
             this.txtNum1.Size = new System.Drawing.Size(211, 26);
             this.txtNum1.TabIndex = 10;
+            this.txtNum1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Allow_Only_Numbers);
             // 
             // btnLimpar
             // 
