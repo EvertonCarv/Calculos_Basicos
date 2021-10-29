@@ -19,14 +19,60 @@ namespace Calculos_Basicos
 
         private void label1_Click(object sender, EventArgs e)
         {
-            txtNum1.Text = "";
-            txtNum2.Text = "";
-            txtResultado.Text = "";
+            
         }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSomar_Click(object sender, EventArgs e)
+        {
+            // Declaração de variáveis do tipo double, num1, num2, resultado.
+            double num1, num2, resultado;
+            //num1 e num2 recebe conteúdo do textbox (txtNum1.text e txtNum2.text)
+            //Convert.Todouble é necessário para que seja convertido o conteúdo do textbox para número.
+            num1 = Convert.ToDouble(txtNum1.Text);
+            num2 = Convert.ToDouble(txtNum1.Text);
+            //Variável resultado = recebe conteúdo de num1 + num2 e realiza o cálculo.
+            resultado = num1 + num2;
+            // txtResultado.Text = recebe conteúdo da variável resultado e converte para número.
+            txtResultado.Text = resultado.ToString();
+        }
+
+        private void btnSubtrair_Click(object sender, EventArgs e)
+        {
+            double num1, num2, resultado;
+            num1 = Convert.ToDouble(txtNum1.Text);
+            num2 = Convert.ToDouble(txtNum1.Text);
+            resultado = num1 - num2;
+            txtResultado.Text = resultado.ToString();
+        }
+
+        private void btnMultiplicar_Click(object sender, EventArgs e)
+        {
+            double num1, num2, resultado;
+            num1 = Convert.ToDouble(txtNum1.Text);
+            num2 = Convert.ToDouble(txtNum1.Text);
+            resultado = num1 * num2;
+            txtResultado.Text = resultado.ToString();
+        }
+
+        private void btnDividir_Click(object sender, EventArgs e)
+        {
+            double num1, num2, resultado;
+            num1 = Convert.ToDouble(txtNum1.Text);
+            num2 = Convert.ToDouble(txtNum1.Text);
+            resultado = num1 / num2;
+            txtResultado.Text = resultado.ToString();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtNum1.Text = "";
+            txtNum2.Text = "";
+            txtResultado.Text = "";
         }
     }
 }

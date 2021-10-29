@@ -106,12 +106,13 @@ namespace Calculos_Basicos
             this.btnSomar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSomar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSomar.Location = new System.Drawing.Point(173, 203);
-            this.btnSomar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSomar.Margin = new System.Windows.Forms.Padding(4);
             this.btnSomar.Name = "btnSomar";
             this.btnSomar.Size = new System.Drawing.Size(42, 43);
             this.btnSomar.TabIndex = 4;
             this.btnSomar.Text = "+";
             this.btnSomar.UseVisualStyleBackColor = false;
+            this.btnSomar.Click += new System.EventHandler(this.btnSomar_Click);
             // 
             // btnSubtrair
             // 
@@ -121,12 +122,13 @@ namespace Calculos_Basicos
             this.btnSubtrair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSubtrair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtrair.Location = new System.Drawing.Point(225, 203);
-            this.btnSubtrair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubtrair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubtrair.Name = "btnSubtrair";
             this.btnSubtrair.Size = new System.Drawing.Size(40, 43);
             this.btnSubtrair.TabIndex = 5;
             this.btnSubtrair.Text = "-";
             this.btnSubtrair.UseVisualStyleBackColor = false;
+            this.btnSubtrair.Click += new System.EventHandler(this.btnSubtrair_Click);
             // 
             // btnMultiplicar
             // 
@@ -136,12 +138,13 @@ namespace Calculos_Basicos
             this.btnMultiplicar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnMultiplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultiplicar.Location = new System.Drawing.Point(273, 203);
-            this.btnMultiplicar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMultiplicar.Margin = new System.Windows.Forms.Padding(4);
             this.btnMultiplicar.Name = "btnMultiplicar";
             this.btnMultiplicar.Size = new System.Drawing.Size(42, 43);
             this.btnMultiplicar.TabIndex = 6;
             this.btnMultiplicar.Text = "*";
             this.btnMultiplicar.UseVisualStyleBackColor = false;
+            this.btnMultiplicar.Click += new System.EventHandler(this.btnMultiplicar_Click);
             // 
             // btnDividir
             // 
@@ -151,19 +154,20 @@ namespace Calculos_Basicos
             this.btnDividir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnDividir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDividir.Location = new System.Drawing.Point(323, 203);
-            this.btnDividir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDividir.Margin = new System.Windows.Forms.Padding(4);
             this.btnDividir.Name = "btnDividir";
             this.btnDividir.Size = new System.Drawing.Size(45, 43);
             this.btnDividir.TabIndex = 7;
             this.btnDividir.Text = "/";
             this.btnDividir.UseVisualStyleBackColor = false;
+            this.btnDividir.Click += new System.EventHandler(this.btnDividir_Click);
             // 
             // txtResultado
             // 
             this.txtResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtResultado.ForeColor = System.Drawing.Color.Red;
             this.txtResultado.Location = new System.Drawing.Point(243, 284);
-            this.txtResultado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtResultado.Margin = new System.Windows.Forms.Padding(4);
             this.txtResultado.Name = "txtResultado";
             this.txtResultado.Size = new System.Drawing.Size(275, 26);
             this.txtResultado.TabIndex = 8;
@@ -173,7 +177,7 @@ namespace Calculos_Basicos
             this.txtNum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtNum2.ForeColor = System.Drawing.Color.Red;
             this.txtNum2.Location = new System.Drawing.Point(307, 158);
-            this.txtNum2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNum2.Margin = new System.Windows.Forms.Padding(4);
             this.txtNum2.Name = "txtNum2";
             this.txtNum2.Size = new System.Drawing.Size(211, 26);
             this.txtNum2.TabIndex = 9;
@@ -183,7 +187,7 @@ namespace Calculos_Basicos
             this.txtNum1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtNum1.ForeColor = System.Drawing.Color.Red;
             this.txtNum1.Location = new System.Drawing.Point(307, 117);
-            this.txtNum1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNum1.Margin = new System.Windows.Forms.Padding(4);
             this.txtNum1.Name = "txtNum1";
             this.txtNum1.Size = new System.Drawing.Size(211, 26);
             this.txtNum1.TabIndex = 10;
@@ -202,6 +206,7 @@ namespace Calculos_Basicos
             this.btnLimpar.TabIndex = 11;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnSair
             // 
@@ -240,7 +245,7 @@ namespace Calculos_Basicos
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Calculadora Básica";
             this.ResumeLayout(false);
